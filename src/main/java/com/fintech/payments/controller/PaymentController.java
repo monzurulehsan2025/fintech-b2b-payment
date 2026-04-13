@@ -126,5 +126,37 @@ public class PaymentController {
                 .timestamp(LocalDateTime.now().minusDays(1).toString())
                 .build()
         );
+    /**
+     * 6. GET /api/v1/network/participants
+     * Returns a list of verified businesses on the payment network.
+     */
+    @GetMapping("/network/participants")
+    public List<NetworkParticipant> getNetworkParticipants() {
+        return Arrays.asList(
+            NetworkParticipant.builder()
+                .participantId("PART-1002")
+                .businessName("Atlantic Retail Group")
+                .country("USA")
+                .networkStatus("ACTIVE")
+                .primaryCurrency("USD")
+                .registrationDate("2025-01-15")
+                .build(),
+            NetworkParticipant.builder()
+                .participantId("PART-2005")
+                .businessName("Euro Distribution Ltd")
+                .country("Germany")
+                .networkStatus("ACTIVE")
+                .primaryCurrency("EUR")
+                .registrationDate("2024-11-20")
+                .build(),
+            NetworkParticipant.builder()
+                .participantId("PART-3009")
+                .businessName("Pacific Tech Hub")
+                .country("Singapore")
+                .networkStatus("VETTING")
+                .primaryCurrency("SGD")
+                .registrationDate("2026-03-01")
+                .build()
+        );
     }
 }

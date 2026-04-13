@@ -116,6 +116,27 @@ This is a Java-based Spring Boot backend prototype for a B2B payment platform, i
   ]
   ```
 
+### 6. Network Participants
+- **Endpoint:** `GET /api/v1/network/participants`
+- **Description:** Returns a list of verified businesses on the payment network.
+- **Sample Request:**
+  ```bash
+  curl -X GET http://localhost:8080/api/v1/network/participants
+  ```
+- **Sample Response:**
+  ```json
+  [
+    {
+      "participantId": "PART-1002",
+      "businessName": "Atlantic Retail Group",
+      "country": "USA",
+      "networkStatus": "ACTIVE",
+      "primaryCurrency": "USD",
+      "registrationDate": "2025-01-15"
+    }
+  ]
+  ```
+
 ## Technical Details
 - **Framework:** Spring Boot 3.2.4
 - **Language:** Java 17
